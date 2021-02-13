@@ -63,31 +63,33 @@ export default class SearchPage extends React.Component {
     return (
     
         <div className="search">
-            <div className="side-bar">
-                <div className='dropdown'>
-                    <p>Sort By Category:</p>
-                    <select className="poke-sort" onChange={this.handleSortBy}>
-                        <option value="pokemon">Name</option>
-                        <option value="ability_1">Ability</option>
-                        <option value="type_1">Type</option>
-                        <option value="shape">Shape</option>
-                    </select>
-                </div>
-                <div className='dropdown'>
-                    <p>Sort By ↑↓:</p>
-                    <select className="poke-sort" onChange={this.handleSortOrder}>
-                        <option value="Ascending">Ascending</option>
-                        <option value="Descending">Descending</option>
-                    </select>
-                </div>
-                <div className="search-bar">
-                    <p>Search for your favorite Pokemon.</p>
-                    <input type="text" onChange={this.handleSearch} placeholder="Blastoise.."></input>
-                </div>
-                <div>
-                    <button onClick={this.goHome}>
-                    <img src="https://fontmeme.com/permalink/210213/9eaf7d558186d9f165ec4d9d9da0308f.png" alt="pokemon-font" border="0"/>
-                    </button>
+            <div className="sidebar-wrapper">
+                <div className="side-bar">
+                    <div className='dropdown'>
+                        <p>Sort By Category:</p>
+                        <select className="poke-sort" onChange={this.handleSortBy}>
+                            <option value="pokemon">Name</option>
+                            <option value="ability_1">Ability</option>
+                            <option value="type_1">Type</option>
+                            <option value="shape">Shape</option>
+                        </select>
+                    </div>
+                    <div className='dropdown'>
+                        <p>Sort By ↑↓:</p>
+                        <select className="poke-sort" onChange={this.handleSortOrder}>
+                            <option value="Ascending">Ascending</option>
+                            <option value="Descending">Descending</option>
+                        </select>
+                    </div>
+                    <div className="search-bar">
+                        <p>Search for your favorite Pokemon!</p>
+                        <input type="text" onChange={this.handleSearch} placeholder="Blastoise.."></input>
+                    </div>
+                    <div>
+                        <button onClick={this.goHome}>
+                        <img src="https://fontmeme.com/permalink/210213/9eaf7d558186d9f165ec4d9d9da0308f.png" alt="pokemon-font" border="0"/>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div className='poke-gallery'>
