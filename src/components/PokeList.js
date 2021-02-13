@@ -1,20 +1,20 @@
 import React from 'react';
-import PokeItem from './ImageItem';
+import PokeItem from './PokeItem';
 
 
-class ImageList extends React.Component {
+class PokeList extends React.Component {
     render() {
 
     return (
       <ul className="poke-list">
-        {this.props.pokeData.map(PokeImage =>
+        {this.props.filteredPokeData.map(pokemon =>
       <PokeItem
-      key={PokeImage.pokemon}
-      ImageItemProp= {PokeImage} />)}
+      key={pokemon.key}
+      PokeItemProp= {pokemon} />)}
       
       </ul>
     );
   }
 }
 
-export default ImageList;
+export default PokeList;

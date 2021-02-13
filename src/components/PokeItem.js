@@ -5,9 +5,9 @@ class PokeItem extends React.Component {
     return (
       <li className="poke-item">
         <h2 className="poke-name">{this.props.PokeItemProp.pokemon}</h2>
-        <img className="poke-img" src={this.props.ImageItemProp.url_image} alt="animals"/>
-        <p className="poke-data">{this.props.ImageItemProp.attack}</p>
-        <p className="poke-type">{this.props.ImageItemProp.type_1}</p>
+        <img className="poke-img" src={this.props.PokeItemProp.url_image} alt="animals"/>
+        <p className="poke-type">{this.props.PokeItemProp.ability_1}</p>
+        <p className="poke-type">{this.props.PokeItemProp.type_1}</p>
       </li>
     )
   }
