@@ -7,14 +7,13 @@ import {
 } from 'react-router-dom';
 import SearchPage from './components/SearchPage.js';
 import HomePage from './components/HomePage.js';
-import Header from './components/Header.js';
+
 
 export default class App extends Component {
     render() {
         return (
             <div>
                 <Router>
-                    <Header />
                     <Switch>
                         <Route 
                             path="/" 
