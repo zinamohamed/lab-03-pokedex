@@ -42,12 +42,13 @@ export default class SearchPage extends React.Component {
    render () {
 
     if (this.state.sortOrder === 'Ascending') {
-        pokeData.sort(
+        this.state.pokeData.sort(
             (a, b) =>
                 a[this.state.sortBy].localeCompare(b[this.state.sortBy])
         );
-    } else {
-        pokeData.sort(
+    } 
+    if (this.state.sortOrder === 'Descending') {
+        this.state.pokeData.sort(
             (a, b) =>
                 b[this.state.sortBy].localeCompare(a[this.state.sortBy])
         );
@@ -96,4 +97,4 @@ export default class SearchPage extends React.Component {
 
        );
     }
-}
+   }
