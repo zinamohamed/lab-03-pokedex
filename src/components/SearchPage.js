@@ -2,6 +2,7 @@ import React from 'react'
 import pokeData from './pokeData';
 import PokeList from './PokeList';
 import './SearchPage.css';
+import Home from './homeButton.js';
 
 export default class SearchPage extends React.Component {
     // initalize state //
@@ -34,11 +35,6 @@ export default class SearchPage extends React.Component {
         this.setState({
            sortOrder: e.target.value, 
         });
-    }
-
-    goHome() {
-        window.location.href="./"
-
     }
 
     
@@ -86,9 +82,7 @@ export default class SearchPage extends React.Component {
                         <input type="text" onChange={this.handleSearch} placeholder="Blastoise.."></input>
                     </div>
                     <div>
-                        <button onClick={this.goHome}>
-                        <img src="https://fontmeme.com/permalink/210213/9eaf7d558186d9f165ec4d9d9da0308f.png" alt="pokemon-font" border="0"/>
-                        </button>
+                        <Home/>
                     </div>
                 </div>
             </div>

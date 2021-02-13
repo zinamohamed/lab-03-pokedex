@@ -1,16 +1,13 @@
 
 import React, { Component } from 'react';
 import './HomePage.css';
+import Start from './startButton.js';
 
 
 
 
 export default class HomePage extends Component {
 
-    startPokedex() {
-        window.location.href="/search"
-
-    }
     render() {
         return (
             <div className="home">
@@ -24,9 +21,8 @@ export default class HomePage extends Component {
                     
                     </div>
                     <div>
-                        <button onClick={this.startPokedex}>
-                            <img src="https://fontmeme.com/permalink/210213/06dc4a70d15f49072580120c2751988d.png" alt="pokemon-font" border="0"/>
-                        </button>
+                       
+                        <Start/>
                     </div>
     
                 </div>    
