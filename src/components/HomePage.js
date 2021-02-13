@@ -8,7 +8,7 @@ import './HomePage.css';
 export default class HomePage extends Component {
 
     startPokedex() {
-        window.location.href="./search"
+        window.location.href="/search"
 
     }
     render() {
