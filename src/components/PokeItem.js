@@ -8,6 +8,7 @@ class PokeItem extends React.Component {
         <img className="poke-img" src={this.props.PokeItemProp.url_image} alt="animals"/>
         <p className="poke-type">{this.props.PokeItemProp.ability_1}</p>
         <p className="poke-type">{this.props.PokeItemProp.type_1}</p>
+        <p className="poke-type">{this.props.PokeItemProp.shape.id}</p>
       </li>
     )
   }

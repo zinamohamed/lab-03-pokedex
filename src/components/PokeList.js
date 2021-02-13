@@ -9,7 +9,7 @@ class PokeList extends React.Component {
       <ul className="poke-list">
         {this.props.filteredPokeData.map(pokemon =>
       <PokeItem
-      key={pokemon.key}
+      key={pokemon._id}
       PokeItemProp= {pokemon} />)}
       
       </ul>
