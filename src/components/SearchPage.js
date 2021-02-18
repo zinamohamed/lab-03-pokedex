@@ -42,13 +42,13 @@ export default class SearchPage extends React.Component {
    render () {
 
     if (this.state.sortOrder === 'Ascending') {
-        this.state.pokeData.sort(
+        this.state.pokemon.sort(
             (a, b) =>
                 a[this.state.sortBy].localeCompare(b[this.state.sortBy])
         );
     } 
     if (this.state.sortOrder === 'Descending') {
-        this.state.pokeData.sort(
+        this.state.pokemon.sort(
             (a, b) =>
                 b[this.state.sortBy].localeCompare(a[this.state.sortBy])
         );
