@@ -5,7 +5,8 @@ import './SearchPage.css';
 import Home from './homeButton.js';
 import Spinner from './Spinner.js';
 import request from 'superagent';
-import Sort from './sort';
+import SortOrder from './SortOrder.js';
+import SortBy from './SortBy.js'
 import Searchbar from './Searchbar';
 
 export default class SearchPage extends React.Component {
@@ -25,7 +26,7 @@ export default class SearchPage extends React.Component {
             loading: true 
         });
 
-        const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}`)
+        const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=${this.state.sortBy}&direction=${this.state.sortOrder}`);
 
         this.setState({
             filteredPokeData: data.body.results,
@@ -71,18 +72,18 @@ export default class SearchPage extends React.Component {
 
    render () {
 
-    // if (this.state.sortOrder === 'Ascending') {
-    //      this.state.pokemon.sort(
-    //          (a, b) =>
+    // if (this.state.sortOrder === 'asc') {
+    //       this.state.filteredPokeData.sort(
+    //           (a, b) =>
     //              a[this.state.sortBy].localeCompare(b[this.state.sortBy])
-    //      );
-    //  } 
-    //  if (this.state.sortOrder === 'Descending') {
-    //      this.state.pokemon.sort(
-    //          (a, b) =>
-    //              b[this.state.sortBy].localeCompare(a[this.state.sortBy])
-    //      );
-    //  }
+    //       );
+    //   } 
+    //   else {
+    //       this.state.filteredPokeData.sort(
+    //           (a, b) =>
+    //               b[this.state.sortBy].localeCompare(a[this.state.sortBy])
+    //       );
+    //   }
     
     
     // const filteredPokeData = this.state.pokemons.filter(pokemon=> pokemon.pokemon.includes(this.state.query))
@@ -97,7 +98,9 @@ export default class SearchPage extends React.Component {
                     handleSearch={this.handleSearch}
                     />
                     
-                    <Sort handleSortBy={this.handleSortBy} handleSortOrder={this.handleSortOrder} />
+                    <SortOrder handleSortOrder={this.handleSortOrder} />
+                    
+                    <SortBy handleSortBy={this.handleSortBy} />
                     
                    
                     
