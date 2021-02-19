@@ -17,6 +17,10 @@ export default class SearchPage extends React.Component {
       sortOrder:'asc',
       query:'',
       loading: false,
+      perPage: 20,
+      allPoke: 0,
+      currentPage: 1,
+     
     }
 
     
@@ -26,7 +30,7 @@ export default class SearchPage extends React.Component {
             loading: true 
         });
 
-        const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=${this.state.sortBy}&direction=${this.state.sortOrder}`);
+        const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=${this.state.sortBy}&direction=${this.state.sortOrder}&perPage=${this.state.perPage}&page=${this.state.currentPage}`);
 
         this.setState({
             filteredPokeData: data.body.results,
@@ -60,10 +64,25 @@ export default class SearchPage extends React.Component {
        })
        await this.loadPoke()
      }
-   
-    
 
-  
+      previousPageClickHandle = async () => {
+        await this.setState({
+          currentPage: this.state.currentPage - 1
+        })
+        await this.loadPoke();
+      }
+
+      nextPageClickHandle = async () => {
+        await this.setState({
+          currentPage: this.state.currentPage + 1
+        })
+        await this.loadPoke();
+      }
+    
+      clickHandle = async () => {
+
+        await this.loadPoke()
+      }
 
 
 
@@ -71,6 +90,8 @@ export default class SearchPage extends React.Component {
     
 
    render () {
+
+    const lastPage = Math.ceil(this.state.allPoke / this.state.perPage);  
 
     // if (this.state.sortOrder === 'asc') {
     //       this.state.filteredPokeData.sort(
@@ -93,21 +114,39 @@ export default class SearchPage extends React.Component {
         <div className="search">
             <div className="sidebar-wrapper">
                 <div className="side-bar">
+                  <div className="search-area">
                     
-                    <Searchbar 
-                    handleSearch={this.handleSearch}
-                    />
-                    
-                    <SortOrder handleSortOrder={this.handleSortOrder} />
-                    
-                    <SortBy handleSortBy={this.handleSortBy} />
-                    
-                   
-                    
-                    <div>
-                        <Home/>
+                      <Searchbar 
+                      handleSearch={this.handleSearch}
+                      clickHandle={this.clickHandle} 
+                      />
+
+                      
+                      <SortOrder handleSortOrder={this.handleSortOrder} />
+                      
+                      <SortBy handleSortBy={this.handleSortBy} />
+                      
+
                     </div>
-                
+                    
+                    <div className="nav-area">
+                      <div className="nav-buttons">
+                          <button className="page-button"
+                          onClick={this.previousPageClickHandle} 
+                          disabled={this.state.currentPage === 1}> Previous Page
+                          </button>
+
+                          <button className="page-button"
+                          onClick={this.nextPageClickHandle} 
+                          disabled={this.state.currentPage === lastPage}> Next Page
+                          </button>
+                      </div>
+
+                      <p>Page: {this.state.currentPage}</p>
+                    </div>
+                    <div>
+                      <Home/>
+                    </div>
                 </div>
             </div>
                 

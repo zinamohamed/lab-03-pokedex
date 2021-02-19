@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import SearchPage from './components/SearchPage.js';
 import HomePage from './components/HomePage.js';
+import DetailPage from './components/DetailPage.js';
 
 
 export default class App extends Component {
@@ -15,16 +16,21 @@ export default class App extends Component {
             <div>
                 <Router>
                     <Switch>
-                        <Route 
+                    <Route 
                             path="/" 
                             exact
-                            render={(routerProps) => <HomePage {...routerProps} />} 
+                            component={HomePage} 
                         />
                         <Route 
                             path="/search" 
                             exact
-                            render={(routerProps) => <SearchPage {...routerProps} />} 
-                        />
+                            component={SearchPage} 
+                        />                        
+                        <Route 
+                            path="/:pokemonName" 
+                            exact
+                            component={DetailPage} 
+                        /> 
                     </Switch>
                 </Router>
             </div>

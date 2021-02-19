@@ -135,5 +135,37 @@ input:focus {
   align-items: center;
 }
 
+.detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  width: 800px;
+  height: 800px;
+}
+
+
+.page-button {
+  border: none;
+  font-size: 16px;
+  color: black;
+
+}
+
+.page-button:hover {
+  color: yellow;
+  border: none;
+}
+
 
 
