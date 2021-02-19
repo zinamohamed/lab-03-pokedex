@@ -47,6 +47,10 @@ export default class Detail extends Component {
                           <p className="poke-type">Ability: {this.state.filteredPokeData.ability_1}</p>
                           <p className="poke-type">Type: {this.state.filteredPokeData.type_1}</p>
                           <p className="poke-shape">Shape: {this.state.filteredPokeData.shape}</p>
+                          <p className="poke-HP">HP: {this.state.filteredPokeData.hp}</p>
+                          <p className="poke-speed">Speed: {this.state.filteredPokeData.speed}</p>
+                          <p className="poke-attack">Attack: {this.state.filteredPokeData.attack}</p>
+                          <p className="poke-defense">Defense: {this.state.filteredPokeData.defense}</p>
                         </div> 
                         <Start/>
                        </li> 
