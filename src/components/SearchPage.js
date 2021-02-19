@@ -3,6 +3,7 @@ import React from 'react'
 import PokeList from './PokeList';
 import './SearchPage.css';
 import Home from './homeButton.js';
+import Detail from './detailButton.js';
 import Spinner from './Spinner.js';
 import request from 'superagent';
 import SortOrder from './SortOrder.js';
