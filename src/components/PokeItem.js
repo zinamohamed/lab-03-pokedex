@@ -12,11 +12,11 @@ class PokeItem extends React.Component {
             </Link>
             <img className="poke-img" src={this.props.PokeItemProp.url_image} alt="animals"/>
           </div>
-          <div className ="specs">
+          {/* <div className ="specs">
             <p className="poke-type">Ability: {this.props.PokeItemProp.ability_1}</p>
             <p className="poke-type">Type: {this.props.PokeItemProp.type_1}</p>
             <p className="poke-shape">Shape: {this.props.PokeItemProp.shape}</p>
-          </div>
+          </div> */}
         </li>
       
     )

@@ -17,7 +17,7 @@ export default class HomePage extends Component {
                         <img src="https://fontmeme.com/permalink/210126/745a17c33385cded12719c0f8b28a0ae.png" alt="pokemon-font" border="0"/>
                     </div>
                     <div>
-                        <img src="https://64.media.tumblr.com/a8afd9ea5f980fff338b3040817df51d/tumblr_n701xqmE3u1rjenv2o1_500.gif" alt="pokemon"/>
+                        <img src="https://i.pinimg.com/originals/a8/47/f6/a847f6c429074fcd042e0e3c3ef41a70.gif" alt="pokemon"/>
                     
                     </div>
                     <div>

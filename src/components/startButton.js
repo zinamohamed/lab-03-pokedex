@@ -6,7 +6,7 @@ export default withRouter(class Start extends Component {
         return (
         <button>
             <NavLink exact activeClassName="selected" to="/search">
-                <img src="https://fontmeme.com/permalink/210213/06dc4a70d15f49072580120c2751988d.png" alt="pokemon-font" border="0"/>
+            <img src="https://fontmeme.com/permalink/210219/1f8ff8817467b12f5665b7932a869420.png" alt="pokemon-font" border="0"/>
             </NavLink>
 
         </button>
