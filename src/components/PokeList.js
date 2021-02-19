@@ -10,7 +10,8 @@ class PokeList extends React.Component {
         {this.props.filteredPokeData.map(pokemon =>
       <PokeItem
       key={pokemon._id}
-      PokeItemProp= {pokemon} />)}
+      PokeItemProp= {pokemon} />
+      )}
       
       </ul>
     );
