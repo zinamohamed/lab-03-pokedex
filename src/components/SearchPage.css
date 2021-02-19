@@ -119,4 +119,16 @@ input:focus {
   outline: none;
 }
 
+.spinner-img {
+  width: 200px;
+  height: 200px;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
